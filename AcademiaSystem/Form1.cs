@@ -43,7 +43,8 @@ namespace AcademiaSystem
 
         private void novoUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+            F_NovoUsuario f_NovoUsuario = new F_NovoUsuario();
+            f_NovoUsuario.ShowDialog();
         }
 
         private void gestãoDeUsuáriosToolStripMenuItem_Click(object sender, EventArgs e)
