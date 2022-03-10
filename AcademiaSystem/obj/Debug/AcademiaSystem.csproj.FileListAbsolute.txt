@@ -44,3 +44,4 @@ D:\REPOSITÓRIO\SistemaDeAcademia\AcademiaSystem\obj\Debug\AcademiaSystem.F_Novo
 D:\REPOSITÓRIO\SistemaDeAcademia\AcademiaSystem\obj\Debug\AcademiaSystem.F_GestaoUsuarios.resources
 D:\REPOSITÓRIO\SistemaDeAcademia\AcademiaSystem\obj\Debug\AcademiaSystem.F_horarios.resources
 D:\REPOSITÓRIO\SistemaDeAcademia\AcademiaSystem\obj\Debug\AcademiaSystem.F_gestaoProfessores.resources
+D:\REPOSITÓRIO\SistemaDeAcademia\AcademiaSystem\obj\Debug\AcademiaSystem.F_GestaoTurmas.resources

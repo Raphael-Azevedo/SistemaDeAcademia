@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -45,11 +45,11 @@
             this.Tb_id = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Dgv_usuarios = new System.Windows.Forms.DataGridView();
-            this.Btn_novoUsuario = new System.Windows.Forms.Button();
-            this.Btn_salvar = new System.Windows.Forms.Button();
-            this.Btn_excluir = new System.Windows.Forms.Button();
             this.Btn_fechar = new System.Windows.Forms.Button();
+            this.Btn_excluir = new System.Windows.Forms.Button();
+            this.Btn_salvar = new System.Windows.Forms.Button();
+            this.Btn_novoUsuario = new System.Windows.Forms.Button();
+            this.Dgv_usuarios = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.N_nivel)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_usuarios)).BeginInit();
@@ -110,7 +110,7 @@
             0});
             this.N_nivel.Name = "N_nivel";
             this.N_nivel.Size = new System.Drawing.Size(129, 20);
-            this.N_nivel.TabIndex = 20;
+            this.N_nivel.TabIndex = 5;
             // 
             // Cb_status
             // 
@@ -122,7 +122,7 @@
             this.Cb_status.Location = new System.Drawing.Point(12, 184);
             this.Cb_status.Name = "Cb_status";
             this.Cb_status.Size = new System.Drawing.Size(130, 21);
-            this.Cb_status.TabIndex = 19;
+            this.Cb_status.TabIndex = 4;
             // 
             // Tb_senha
             // 
@@ -130,7 +130,7 @@
             this.Tb_senha.Name = "Tb_senha";
             this.Tb_senha.PasswordChar = '*';
             this.Tb_senha.Size = new System.Drawing.Size(129, 20);
-            this.Tb_senha.TabIndex = 18;
+            this.Tb_senha.TabIndex = 3;
             // 
             // label3
             // 
@@ -146,7 +146,7 @@
             this.Tb_username.Location = new System.Drawing.Point(12, 132);
             this.Tb_username.Name = "Tb_username";
             this.Tb_username.Size = new System.Drawing.Size(130, 20);
-            this.Tb_username.TabIndex = 16;
+            this.Tb_username.TabIndex = 2;
             // 
             // label2
             // 
@@ -162,7 +162,7 @@
             this.Tb_nome.Location = new System.Drawing.Point(12, 74);
             this.Tb_nome.Name = "Tb_nome";
             this.Tb_nome.Size = new System.Drawing.Size(316, 20);
-            this.Tb_nome.TabIndex = 14;
+            this.Tb_nome.TabIndex = 1;
             // 
             // label1
             // 
@@ -203,18 +203,62 @@
             this.panel1.Size = new System.Drawing.Size(699, 33);
             this.panel1.TabIndex = 28;
             // 
+            // Btn_fechar
+            // 
+            this.Btn_fechar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_fechar.Location = new System.Drawing.Point(575, 4);
+            this.Btn_fechar.Name = "Btn_fechar";
+            this.Btn_fechar.Size = new System.Drawing.Size(121, 23);
+            this.Btn_fechar.TabIndex = 9;
+            this.Btn_fechar.Text = "Fechar ";
+            this.Btn_fechar.UseVisualStyleBackColor = true;
+            this.Btn_fechar.Click += new System.EventHandler(this.Btn_fechar_Click);
+            // 
+            // Btn_excluir
+            // 
+            this.Btn_excluir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_excluir.Location = new System.Drawing.Point(258, 4);
+            this.Btn_excluir.Name = "Btn_excluir";
+            this.Btn_excluir.Size = new System.Drawing.Size(121, 23);
+            this.Btn_excluir.TabIndex = 8;
+            this.Btn_excluir.Text = "Excluir usuário";
+            this.Btn_excluir.UseVisualStyleBackColor = true;
+            this.Btn_excluir.Click += new System.EventHandler(this.Btn_excluir_Click);
+            // 
+            // Btn_salvar
+            // 
+            this.Btn_salvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_salvar.Location = new System.Drawing.Point(131, 4);
+            this.Btn_salvar.Name = "Btn_salvar";
+            this.Btn_salvar.Size = new System.Drawing.Size(121, 23);
+            this.Btn_salvar.TabIndex = 7;
+            this.Btn_salvar.Text = "Salvar alterações";
+            this.Btn_salvar.UseVisualStyleBackColor = true;
+            this.Btn_salvar.Click += new System.EventHandler(this.Btn_salvar_Click);
+            // 
+            // Btn_novoUsuario
+            // 
+            this.Btn_novoUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_novoUsuario.Location = new System.Drawing.Point(4, 4);
+            this.Btn_novoUsuario.Name = "Btn_novoUsuario";
+            this.Btn_novoUsuario.Size = new System.Drawing.Size(121, 23);
+            this.Btn_novoUsuario.TabIndex = 6;
+            this.Btn_novoUsuario.Text = "Novo Usuário";
+            this.Btn_novoUsuario.UseVisualStyleBackColor = true;
+            this.Btn_novoUsuario.Click += new System.EventHandler(this.Btn_novoUsuario_Click);
+            // 
             // Dgv_usuarios
             // 
             this.Dgv_usuarios.AllowUserToAddRows = false;
             this.Dgv_usuarios.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_usuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_usuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.Dgv_usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_usuarios.EnableHeadersVisualStyles = false;
             this.Dgv_usuarios.Location = new System.Drawing.Point(334, 15);
@@ -226,50 +270,6 @@
             this.Dgv_usuarios.Size = new System.Drawing.Size(362, 229);
             this.Dgv_usuarios.TabIndex = 29;
             this.Dgv_usuarios.SelectionChanged += new System.EventHandler(this.Dgv_usuarios_SelectionChanged);
-            // 
-            // Btn_novoUsuario
-            // 
-            this.Btn_novoUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_novoUsuario.Location = new System.Drawing.Point(4, 4);
-            this.Btn_novoUsuario.Name = "Btn_novoUsuario";
-            this.Btn_novoUsuario.Size = new System.Drawing.Size(121, 23);
-            this.Btn_novoUsuario.TabIndex = 0;
-            this.Btn_novoUsuario.Text = "Novo Usuário";
-            this.Btn_novoUsuario.UseVisualStyleBackColor = true;
-            this.Btn_novoUsuario.Click += new System.EventHandler(this.Btn_novoUsuario_Click);
-            // 
-            // Btn_salvar
-            // 
-            this.Btn_salvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_salvar.Location = new System.Drawing.Point(131, 4);
-            this.Btn_salvar.Name = "Btn_salvar";
-            this.Btn_salvar.Size = new System.Drawing.Size(121, 23);
-            this.Btn_salvar.TabIndex = 1;
-            this.Btn_salvar.Text = "Salvar alterações";
-            this.Btn_salvar.UseVisualStyleBackColor = true;
-            this.Btn_salvar.Click += new System.EventHandler(this.Btn_salvar_Click);
-            // 
-            // Btn_excluir
-            // 
-            this.Btn_excluir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_excluir.Location = new System.Drawing.Point(258, 4);
-            this.Btn_excluir.Name = "Btn_excluir";
-            this.Btn_excluir.Size = new System.Drawing.Size(121, 23);
-            this.Btn_excluir.TabIndex = 2;
-            this.Btn_excluir.Text = "Excluir usuário";
-            this.Btn_excluir.UseVisualStyleBackColor = true;
-            this.Btn_excluir.Click += new System.EventHandler(this.Btn_excluir_Click);
-            // 
-            // Btn_fechar
-            // 
-            this.Btn_fechar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_fechar.Location = new System.Drawing.Point(575, 4);
-            this.Btn_fechar.Name = "Btn_fechar";
-            this.Btn_fechar.Size = new System.Drawing.Size(121, 23);
-            this.Btn_fechar.TabIndex = 3;
-            this.Btn_fechar.Text = "Fechar ";
-            this.Btn_fechar.UseVisualStyleBackColor = true;
-            this.Btn_fechar.Click += new System.EventHandler(this.Btn_fechar_Click);
             // 
             // F_GestaoUsuarios
             // 

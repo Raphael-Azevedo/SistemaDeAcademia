@@ -96,5 +96,11 @@ namespace AcademiaSystem
             F_gestaoProfessores f_GestaoProfessores = new F_gestaoProfessores();
             f_GestaoProfessores.ShowDialog();
         }
+
+        private void turmasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_GestaoTurmas f_GestaoTurmas = new F_GestaoTurmas();
+            f_GestaoTurmas.ShowDialog();
+        }
     }
 }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Tb_idHorario = new System.Windows.Forms.TextBox();
@@ -99,7 +99,7 @@
             this.Btn_excluir.Location = new System.Drawing.Point(236, 13);
             this.Btn_excluir.Name = "Btn_excluir";
             this.Btn_excluir.Size = new System.Drawing.Size(110, 23);
-            this.Btn_excluir.TabIndex = 2;
+            this.Btn_excluir.TabIndex = 4;
             this.Btn_excluir.Text = "Excluir Horário";
             this.Btn_excluir.UseVisualStyleBackColor = true;
             this.Btn_excluir.Click += new System.EventHandler(this.Btn_excluir_Click);
@@ -110,7 +110,7 @@
             this.Btn_fechar.Location = new System.Drawing.Point(352, 13);
             this.Btn_fechar.Name = "Btn_fechar";
             this.Btn_fechar.Size = new System.Drawing.Size(110, 23);
-            this.Btn_fechar.TabIndex = 1;
+            this.Btn_fechar.TabIndex = 5;
             this.Btn_fechar.Text = "Fechar";
             this.Btn_fechar.UseVisualStyleBackColor = true;
             this.Btn_fechar.Click += new System.EventHandler(this.Btn_fechar_Click);
@@ -121,7 +121,7 @@
             this.Btn_novo.Location = new System.Drawing.Point(4, 13);
             this.Btn_novo.Name = "Btn_novo";
             this.Btn_novo.Size = new System.Drawing.Size(110, 23);
-            this.Btn_novo.TabIndex = 0;
+            this.Btn_novo.TabIndex = 2;
             this.Btn_novo.Text = "Novo Horário";
             this.Btn_novo.UseVisualStyleBackColor = true;
             this.Btn_novo.Click += new System.EventHandler(this.Btn_novo_Click);
@@ -130,14 +130,14 @@
             // 
             this.Dgv_horarios.AllowUserToAddRows = false;
             this.Dgv_horarios.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_horarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_horarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.Dgv_horarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_horarios.EnableHeadersVisualStyles = false;
             this.Dgv_horarios.Location = new System.Drawing.Point(15, 51);
@@ -156,7 +156,7 @@
             this.Mtb_dscHorario.Mask = "99:99 - 99:99";
             this.Mtb_dscHorario.Name = "Mtb_dscHorario";
             this.Mtb_dscHorario.Size = new System.Drawing.Size(100, 20);
-            this.Mtb_dscHorario.TabIndex = 6;
+            this.Mtb_dscHorario.TabIndex = 1;
             // 
             // F_horarios
             // 
