@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Tb_idHorario = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Btn_novo = new System.Windows.Forms.Button();
-            this.Btn_fechar = new System.Windows.Forms.Button();
-            this.Btn_excluir = new System.Windows.Forms.Button();
             this.Btn_salvar = new System.Windows.Forms.Button();
+            this.Btn_excluir = new System.Windows.Forms.Button();
+            this.Btn_fechar = new System.Windows.Forms.Button();
+            this.Btn_novo = new System.Windows.Forms.Button();
             this.Dgv_horarios = new System.Windows.Forms.DataGridView();
             this.Mtb_dscHorario = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
@@ -82,27 +82,16 @@
             this.panel1.Size = new System.Drawing.Size(467, 42);
             this.panel1.TabIndex = 4;
             // 
-            // Btn_novo
+            // Btn_salvar
             // 
-            this.Btn_novo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_novo.Location = new System.Drawing.Point(4, 13);
-            this.Btn_novo.Name = "Btn_novo";
-            this.Btn_novo.Size = new System.Drawing.Size(110, 23);
-            this.Btn_novo.TabIndex = 0;
-            this.Btn_novo.Text = "Novo Horário";
-            this.Btn_novo.UseVisualStyleBackColor = true;
-            this.Btn_novo.Click += new System.EventHandler(this.Btn_novo_Click);
-            // 
-            // Btn_fechar
-            // 
-            this.Btn_fechar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_fechar.Location = new System.Drawing.Point(352, 13);
-            this.Btn_fechar.Name = "Btn_fechar";
-            this.Btn_fechar.Size = new System.Drawing.Size(110, 23);
-            this.Btn_fechar.TabIndex = 1;
-            this.Btn_fechar.Text = "Fechar";
-            this.Btn_fechar.UseVisualStyleBackColor = true;
-            this.Btn_fechar.Click += new System.EventHandler(this.Btn_fechar_Click);
+            this.Btn_salvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_salvar.Location = new System.Drawing.Point(120, 13);
+            this.Btn_salvar.Name = "Btn_salvar";
+            this.Btn_salvar.Size = new System.Drawing.Size(110, 23);
+            this.Btn_salvar.TabIndex = 3;
+            this.Btn_salvar.Text = "Salvar Horário";
+            this.Btn_salvar.UseVisualStyleBackColor = true;
+            this.Btn_salvar.Click += new System.EventHandler(this.Btn_salvar_Click);
             // 
             // Btn_excluir
             // 
@@ -115,28 +104,40 @@
             this.Btn_excluir.UseVisualStyleBackColor = true;
             this.Btn_excluir.Click += new System.EventHandler(this.Btn_excluir_Click);
             // 
-            // Btn_salvar
+            // Btn_fechar
             // 
-            this.Btn_salvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_salvar.Location = new System.Drawing.Point(120, 13);
-            this.Btn_salvar.Name = "Btn_salvar";
-            this.Btn_salvar.Size = new System.Drawing.Size(110, 23);
-            this.Btn_salvar.TabIndex = 3;
-            this.Btn_salvar.Text = "Salvar Horário";
-            this.Btn_salvar.UseVisualStyleBackColor = true;
-            this.Btn_salvar.Click += new System.EventHandler(this.Btn_salvar_Click);
+            this.Btn_fechar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_fechar.Location = new System.Drawing.Point(352, 13);
+            this.Btn_fechar.Name = "Btn_fechar";
+            this.Btn_fechar.Size = new System.Drawing.Size(110, 23);
+            this.Btn_fechar.TabIndex = 1;
+            this.Btn_fechar.Text = "Fechar";
+            this.Btn_fechar.UseVisualStyleBackColor = true;
+            this.Btn_fechar.Click += new System.EventHandler(this.Btn_fechar_Click);
+            // 
+            // Btn_novo
+            // 
+            this.Btn_novo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_novo.Location = new System.Drawing.Point(4, 13);
+            this.Btn_novo.Name = "Btn_novo";
+            this.Btn_novo.Size = new System.Drawing.Size(110, 23);
+            this.Btn_novo.TabIndex = 0;
+            this.Btn_novo.Text = "Novo Horário";
+            this.Btn_novo.UseVisualStyleBackColor = true;
+            this.Btn_novo.Click += new System.EventHandler(this.Btn_novo_Click);
             // 
             // Dgv_horarios
             // 
             this.Dgv_horarios.AllowUserToAddRows = false;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_horarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.Dgv_horarios.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_horarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.Dgv_horarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_horarios.EnableHeadersVisualStyles = false;
             this.Dgv_horarios.Location = new System.Drawing.Point(15, 51);

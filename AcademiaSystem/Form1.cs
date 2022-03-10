@@ -90,5 +90,11 @@ namespace AcademiaSystem
             F_horarios f_Horarios = new F_horarios();
             f_Horarios.ShowDialog();
         }
+
+        private void gestãoDeProfessoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_gestaoProfessores f_GestaoProfessores = new F_gestaoProfessores();
+            f_GestaoProfessores.ShowDialog();
+        }
     }
 }
