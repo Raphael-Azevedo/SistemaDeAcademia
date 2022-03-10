@@ -41,3 +41,4 @@ D:\REPOSITÓRIO\SistemaDeAcademia\AcademiaSystem\obj\Debug\AcademiaSystem.csproj
 D:\REPOSITÓRIO\SistemaDeAcademia\AcademiaSystem\obj\Debug\AcademiaSystem.exe
 D:\REPOSITÓRIO\SistemaDeAcademia\AcademiaSystem\obj\Debug\AcademiaSystem.pdb
 D:\REPOSITÓRIO\SistemaDeAcademia\AcademiaSystem\obj\Debug\AcademiaSystem.F_NovoUsuario.resources
+D:\REPOSITÓRIO\SistemaDeAcademia\AcademiaSystem\obj\Debug\AcademiaSystem.F_GestaoUsuarios.resources

@@ -49,7 +49,8 @@ namespace AcademiaSystem
 
         private void gestãoDeUsuáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+            F_GestaoUsuarios f_GestaoUsuarios = new F_GestaoUsuarios();
+            f_GestaoUsuarios.ShowDialog();
         }
 
         private void novoAlunoToolStripMenuItem_Click(object sender, EventArgs e)
