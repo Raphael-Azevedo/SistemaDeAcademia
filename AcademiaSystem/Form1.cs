@@ -34,6 +34,7 @@ namespace AcademiaSystem
             Pb_ledLogado.Image = Properties.Resources.led_vermelha_pgn;
             Globais.nivel = 0;
             Globais.logado = false;
+            Restricao();
         }
 
         private void bancoDeDadosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -75,7 +76,19 @@ namespace AcademiaSystem
                 usuáriosToolStripMenuItem.Enabled=false;
                 manutençãoToolStripMenuItem.Enabled = false;
             }
-           
+            if ((Globais.logado && Globais.nivel == 0) || (!Globais.logado))
+            {
+                usuáriosToolStripMenuItem.Enabled = false;
+                manutençãoToolStripMenuItem.Enabled = false;
+            }
+          
+
+        }
+
+        private void horáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_horarios f_Horarios = new F_horarios();
+            f_Horarios.ShowDialog();
         }
     }
 }

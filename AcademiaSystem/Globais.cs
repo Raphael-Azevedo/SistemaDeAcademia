@@ -11,6 +11,9 @@ namespace AcademiaSystem
         public static string versao = "1.0";
         public static bool logado = false;
         public static int nivel = 0;
+        public static string caminho = System.Environment.CurrentDirectory;
+        public static string nomeBanco = "bd_academia.db";
+        public static string caminhoBanco = caminho+@"\BD\";
 
         /*
         N_IDUSUARIO

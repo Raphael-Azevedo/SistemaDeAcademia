@@ -12,10 +12,9 @@ namespace AcademiaSystem
     internal class Banco
     {
         private static SQLiteConnection conexao;
-
         private static SQLiteConnection ConexaoBanco()
         {
-            conexao = new SQLiteConnection("Data Source = D:\\REPOSITÓRIO\\SistemaDeAcademia\\AcademiaSystem\\BD\\bd_academia.db");
+            conexao = new SQLiteConnection("Data Source =" + Globais.caminhoBanco + Globais.nomeBanco);
             conexao.Open();
             return conexao;
         }
@@ -41,7 +40,7 @@ namespace AcademiaSystem
             }
 
         }
-        public static DataTable Consulta(string sql)
+        public static DataTable Dql(string sql)
         {
             SQLiteDataAdapter adapter = null;
             DataTable dt = new DataTable();
@@ -54,10 +53,36 @@ namespace AcademiaSystem
                 adapter.Fill(dt);
                 vcon.Close();
                 return dt;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static void Dml(string sql, string msgOK = null, string msgERRO = null)
+        {
+            SQLiteDataAdapter adapter = null;
+            DataTable dt = new DataTable();
+            try
+            {
+                var vcon = ConexaoBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = sql;
+                adapter = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                cmd.ExecuteNonQuery();
+                vcon.Close();
+
+                if(msgOK != null)
+                    MessageBox.Show(msgOK);
                 
             }
             catch (Exception ex)
-            {             
+            {
+                if (msgERRO != null)
+                    MessageBox.Show(msgERRO + "\n" + ex.Message);
+
                 throw ex;
             }
         }
