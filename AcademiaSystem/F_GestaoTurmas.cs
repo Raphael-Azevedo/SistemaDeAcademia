@@ -12,6 +12,7 @@ namespace AcademiaSystem
 {
     public partial class F_GestaoTurmas : Form
     {
+        string idSelecionado;
         public F_GestaoTurmas()
         {
             InitializeComponent();
@@ -72,6 +73,85 @@ namespace AcademiaSystem
             Cb_horario.ValueMember = "N_IDHORARIO";
         }
 
+        private void Dgv_turmas_SelectionChanged(object sender, EventArgs e)
+        {
+            DataGridView dgv = (DataGridView)sender;
+            int contLinhas = dgv.SelectedRows.Count;
+            if(contLinhas > 0)
+            {
+                idSelecionado = Dgv_turmas.Rows[Dgv_turmas.SelectedRows[0].Index].Cells[0].Value.ToString();
+                string vqueryCampos = @"
+                    SELECT
+                        T_DSCTURMA,
+                        N_IDPROFESSOR,
+                        N_IDHORARIO,
+                        N_MAXALUNOS,
+                        T_STATUS
+                    FROM
+                        tb_turmas
+                    WHERE
+                        N_IDTURMA ="+idSelecionado;
 
+                DataTable dt = Banco.Dql(vqueryCampos);
+                Cb_professor.SelectedValue = dt.Rows[0].Field<Int64>("N_IDPROFESSOR").ToString();
+                N_maxAlunos.Value = dt.Rows[0].Field<Int64>("N_MAXALUNOS");
+                Cb_status.SelectedValue = dt.Rows[0].Field<string>("T_STATUS");
+                Cb_horario.SelectedValue = dt.Rows[0].Field<Int64>("N_IDHORARIO").ToString();
+                Tb_dscTurma.Text = dt.Rows[0].Field<string>("T_DSCTURMA");
+            }
+        }
+
+        private void Btn_novaTurma_Click(object sender, EventArgs e)
+        {
+            Cb_professor.SelectedIndex = -1;
+            N_maxAlunos.Value = 0;
+            Cb_status.SelectedIndex = -1;
+            Cb_horario.SelectedIndex = -1;
+            Tb_dscTurma.Clear();
+            Tb_dscTurma.Focus();
+        }
+
+        private void Btn_salvarEdicoes_Click(object sender, EventArgs e)
+        {
+            int linha = Dgv_turmas.SelectedRows[0].Index;
+            string queryAtualizarTurma = String.Format(@"
+                UPDATE
+                    tb_turmas
+                SET
+                    T_DSCTURMA = '{0}',
+                    N_IDPROFESSOR = {1},
+                    N_IDHORARIO = {2},
+                    N_MAXALUNOS = {3},
+                    T_STATUS = '{4}'
+                WHERE 
+                    N_IDTURMA = {5}
+            ",Tb_dscTurma.Text, Cb_professor.SelectedValue, Cb_horario.SelectedValue, Int32.Parse(N_maxAlunos.Value.ToString()), Cb_status.SelectedValue, idSelecionado);
+            Banco.Dml(queryAtualizarTurma);
+            Dgv_turmas[1, linha].Value = Tb_dscTurma.Text;
+            Dgv_turmas[2, linha].Value = Cb_horario.Text;
+            MessageBox.Show("Dados Gravados");
+        }
+
+        private void Btn_excluirTurma_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Confirmar exclusão?", "Excluir?", MessageBoxButtons.YesNo);
+            if(res == DialogResult.Yes)
+            {
+                string queryExcluirTurma = String.Format(@"
+                    DELETE
+                    FROM
+                        tb_turmas
+                    WHERE
+                        N_IDTURMA = {0}
+                    ",idSelecionado);
+                Banco.Dml(queryExcluirTurma);
+                Dgv_turmas.Rows.Remove(Dgv_turmas.CurrentRow);
+            }
+        }
+
+        private void Btn_fechar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
