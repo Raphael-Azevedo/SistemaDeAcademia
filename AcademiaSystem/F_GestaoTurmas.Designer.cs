@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Btn_fechar = new System.Windows.Forms.Button();
             this.Btn_salvarEdicoes = new System.Windows.Forms.Button();
@@ -46,8 +46,10 @@
             this.Dgv_turmas = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.Tb_dscTurma = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Tb_vagas = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.Tb_idTurma = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.N_maxAlunos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_turmas)).BeginInit();
@@ -97,6 +99,7 @@
             this.Btn_imprimirTurma.TabIndex = 9;
             this.Btn_imprimirTurma.Text = "Imprimir Turma";
             this.Btn_imprimirTurma.UseVisualStyleBackColor = true;
+            this.Btn_imprimirTurma.Click += new System.EventHandler(this.Btn_imprimirTurma_Click);
             // 
             // Btn_excluirTurma
             // 
@@ -123,7 +126,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(403, 54);
+            this.label1.Location = new System.Drawing.Point(403, 98);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 1;
@@ -132,7 +135,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(403, 114);
+            this.label2.Location = new System.Drawing.Point(403, 158);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 13);
             this.label2.TabIndex = 2;
@@ -141,7 +144,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(403, 173);
+            this.label3.Location = new System.Drawing.Point(403, 217);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 3;
@@ -150,7 +153,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(545, 114);
+            this.label4.Location = new System.Drawing.Point(545, 158);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 4;
@@ -159,14 +162,14 @@
             // Cb_professor
             // 
             this.Cb_professor.FormattingEnabled = true;
-            this.Cb_professor.Location = new System.Drawing.Point(406, 74);
+            this.Cb_professor.Location = new System.Drawing.Point(406, 118);
             this.Cb_professor.Name = "Cb_professor";
             this.Cb_professor.Size = new System.Drawing.Size(297, 21);
             this.Cb_professor.TabIndex = 2;
             // 
             // N_maxAlunos
             // 
-            this.N_maxAlunos.Location = new System.Drawing.Point(406, 130);
+            this.N_maxAlunos.Location = new System.Drawing.Point(406, 174);
             this.N_maxAlunos.Name = "N_maxAlunos";
             this.N_maxAlunos.Size = new System.Drawing.Size(136, 20);
             this.N_maxAlunos.TabIndex = 3;
@@ -174,7 +177,7 @@
             // Cb_status
             // 
             this.Cb_status.FormattingEnabled = true;
-            this.Cb_status.Location = new System.Drawing.Point(548, 130);
+            this.Cb_status.Location = new System.Drawing.Point(548, 174);
             this.Cb_status.Name = "Cb_status";
             this.Cb_status.Size = new System.Drawing.Size(155, 21);
             this.Cb_status.TabIndex = 4;
@@ -182,7 +185,7 @@
             // Cb_horario
             // 
             this.Cb_horario.FormattingEnabled = true;
-            this.Cb_horario.Location = new System.Drawing.Point(406, 189);
+            this.Cb_horario.Location = new System.Drawing.Point(406, 233);
             this.Cb_horario.Name = "Cb_horario";
             this.Cb_horario.Size = new System.Drawing.Size(297, 21);
             this.Cb_horario.TabIndex = 5;
@@ -191,14 +194,14 @@
             // 
             this.Dgv_turmas.AllowUserToAddRows = false;
             this.Dgv_turmas.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_turmas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_turmas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.Dgv_turmas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_turmas.EnableHeadersVisualStyles = false;
             this.Dgv_turmas.Location = new System.Drawing.Point(6, 9);
@@ -214,7 +217,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(404, 9);
+            this.label5.Location = new System.Drawing.Point(404, 53);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 13);
             this.label5.TabIndex = 10;
@@ -222,34 +225,57 @@
             // 
             // Tb_dscTurma
             // 
-            this.Tb_dscTurma.Location = new System.Drawing.Point(407, 25);
+            this.Tb_dscTurma.Location = new System.Drawing.Point(407, 69);
             this.Tb_dscTurma.Name = "Tb_dscTurma";
             this.Tb_dscTurma.Size = new System.Drawing.Size(296, 20);
             this.Tb_dscTurma.TabIndex = 1;
             // 
-            // textBox1
+            // Tb_vagas
             // 
-            this.textBox1.Location = new System.Drawing.Point(406, 245);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 11;
+            this.Tb_vagas.Cursor = System.Windows.Forms.Cursors.No;
+            this.Tb_vagas.Location = new System.Drawing.Point(406, 289);
+            this.Tb_vagas.Name = "Tb_vagas";
+            this.Tb_vagas.ReadOnly = true;
+            this.Tb_vagas.Size = new System.Drawing.Size(100, 20);
+            this.Tb_vagas.TabIndex = 11;
+            this.Tb_vagas.TabStop = false;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(406, 229);
+            this.label6.Location = new System.Drawing.Point(406, 273);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(37, 13);
             this.label6.TabIndex = 12;
             this.label6.Text = "Vagas";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(406, 9);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(51, 13);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "ID Turma";
+            // 
+            // Tb_idTurma
+            // 
+            this.Tb_idTurma.Location = new System.Drawing.Point(408, 26);
+            this.Tb_idTurma.Name = "Tb_idTurma";
+            this.Tb_idTurma.ReadOnly = true;
+            this.Tb_idTurma.Size = new System.Drawing.Size(100, 20);
+            this.Tb_idTurma.TabIndex = 14;
+            this.Tb_idTurma.TabStop = false;
             // 
             // F_GestaoTurmas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(715, 450);
+            this.Controls.Add(this.Tb_idTurma);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Tb_vagas);
             this.Controls.Add(this.Tb_dscTurma);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.Dgv_turmas);
@@ -296,7 +322,9 @@
         private System.Windows.Forms.DataGridView Dgv_turmas;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox Tb_dscTurma;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Tb_vagas;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox Tb_idTurma;
     }
 }

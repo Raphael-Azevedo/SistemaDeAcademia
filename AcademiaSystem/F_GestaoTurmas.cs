@@ -1,8 +1,11 @@
-﻿using System;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,14 +16,7 @@ namespace AcademiaSystem
     public partial class F_GestaoTurmas : Form
     {
         string idSelecionado;
-        public F_GestaoTurmas()
-        {
-            InitializeComponent();
-        }
-
-        private void F_GestaoTurmas_Load(object sender, EventArgs e)
-        {
-            string vqueryDGV = @"
+        string vqueryDGV = @"
                 SELECT
                     tbt.N_IDTURMA as 'ID',
                     tbt.T_DSCTURMA as 'Turma',
@@ -30,6 +26,15 @@ namespace AcademiaSystem
                 INNER JOIN
                     tb_horarios as tbh on tbh.N_IDHORARIO = tbt.N_IDHORARIO
             ";
+
+        public F_GestaoTurmas()
+        {
+            InitializeComponent();
+        }
+
+        private void F_GestaoTurmas_Load(object sender, EventArgs e)
+        {
+            
             Dgv_turmas.DataSource = Banco.Dql(vqueryDGV);
             Dgv_turmas.Columns[0].Width = 40;
             Dgv_turmas.Columns[1].Width = 120;
@@ -73,15 +78,33 @@ namespace AcademiaSystem
             Cb_horario.ValueMember = "N_IDHORARIO";
         }
 
+        private void calcVagas()
+        {
+            string queryVagas = String.Format(@"      
+                    SELECT
+                        count(tb_alunosTurma.N_IDALUNO) as 'contVagas'                    
+                    FROM
+                        tb_alunosTurma
+                    INNER JOIN
+                        tb_alunos as tba on tba.N_IDALUNO = tb_alunosTurma.N_IDALUNO
+                    WHERE
+                        T_STATUS = 'A' and tb_alunosTurma.N_IDTURMA =" + idSelecionado);
+            DataTable dt = Banco.Dql(queryVagas);
+            dt = Banco.Dql(queryVagas);
+            int vagas = Int32.Parse(N_maxAlunos.Value.ToString());
+            vagas -= Int32.Parse(dt.Rows[0].Field<Int64>("contVagas").ToString());
+            Tb_vagas.Text = vagas.ToString();
+            
+        }
         private void Dgv_turmas_SelectionChanged(object sender, EventArgs e)
         {
             DataGridView dgv = (DataGridView)sender;
             int contLinhas = dgv.SelectedRows.Count;
             if(contLinhas > 0)
-            {
+            {              
                 idSelecionado = Dgv_turmas.Rows[Dgv_turmas.SelectedRows[0].Index].Cells[0].Value.ToString();
                 string vqueryCampos = @"
-                    SELECT
+                    SELECT                       
                         T_DSCTURMA,
                         N_IDPROFESSOR,
                         N_IDHORARIO,
@@ -90,7 +113,7 @@ namespace AcademiaSystem
                     FROM
                         tb_turmas
                     WHERE
-                        N_IDTURMA ="+idSelecionado;
+                        N_IDTURMA =" + idSelecionado;
 
                 DataTable dt = Banco.Dql(vqueryCampos);
                 Cb_professor.SelectedValue = dt.Rows[0].Field<Int64>("N_IDPROFESSOR").ToString();
@@ -98,38 +121,79 @@ namespace AcademiaSystem
                 Cb_status.SelectedValue = dt.Rows[0].Field<string>("T_STATUS");
                 Cb_horario.SelectedValue = dt.Rows[0].Field<Int64>("N_IDHORARIO").ToString();
                 Tb_dscTurma.Text = dt.Rows[0].Field<string>("T_DSCTURMA");
+                Tb_idTurma.Text = idSelecionado;
+
+                calcVagas();
             }
         }
 
         private void Btn_novaTurma_Click(object sender, EventArgs e)
         {
+
             Cb_professor.SelectedIndex = -1;
             N_maxAlunos.Value = 0;
             Cb_status.SelectedIndex = -1;
             Cb_horario.SelectedIndex = -1;
             Tb_dscTurma.Clear();
             Tb_dscTurma.Focus();
+            Tb_idTurma.Clear();
+
         }
 
         private void Btn_salvarEdicoes_Click(object sender, EventArgs e)
         {
-            int linha = Dgv_turmas.SelectedRows[0].Index;
-            string queryAtualizarTurma = String.Format(@"
-                UPDATE
-                    tb_turmas
-                SET
-                    T_DSCTURMA = '{0}',
-                    N_IDPROFESSOR = {1},
-                    N_IDHORARIO = {2},
-                    N_MAXALUNOS = {3},
-                    T_STATUS = '{4}'
-                WHERE 
-                    N_IDTURMA = {5}
-            ",Tb_dscTurma.Text, Cb_professor.SelectedValue, Cb_horario.SelectedValue, Int32.Parse(N_maxAlunos.Value.ToString()), Cb_status.SelectedValue, idSelecionado);
-            Banco.Dml(queryAtualizarTurma);
-            Dgv_turmas[1, linha].Value = Tb_dscTurma.Text;
-            Dgv_turmas[2, linha].Value = Cb_horario.Text;
-            MessageBox.Show("Dados Gravados");
+            
+                string queryAtualizarTurma = "";
+                if(Tb_idTurma.Text == "")
+                {
+                queryAtualizarTurma = String.Format(@"
+                    INSERT INTO
+                        tb_turmas
+                        (T_DSCTURMA,
+                        N_IDPROFESSOR,
+                        N_IDHORARIO,
+                        N_MAXALUNOS,
+                        T_STATUS)
+                    VALUES
+                        ('{0}',{1},{2},{3},'{4}')
+                    
+                ", Tb_dscTurma.Text, Cb_professor.SelectedValue, Cb_horario.SelectedValue, Int32.Parse(N_maxAlunos.Value.ToString()), Cb_status.SelectedValue);
+                
+                }
+                else
+                {
+                queryAtualizarTurma = String.Format(@"
+                    UPDATE
+                        tb_turmas
+                    SET
+                        T_DSCTURMA = '{0}',
+                        N_IDPROFESSOR = {1},
+                        N_IDHORARIO = {2},
+                        N_MAXALUNOS = {3},
+                        T_STATUS = '{4}'
+                    WHERE 
+                        N_IDTURMA = {5}
+                ", Tb_dscTurma.Text, Cb_professor.SelectedValue, Cb_horario.SelectedValue, Int32.Parse(N_maxAlunos.Value.ToString()), Cb_status.SelectedValue, idSelecionado);
+            }
+                int linha = Dgv_turmas.SelectedRows[0].Index;
+                
+                Banco.Dml(queryAtualizarTurma);
+                Dgv_turmas[1, linha].Value = Tb_dscTurma.Text;
+                Dgv_turmas[2, linha].Value = Cb_horario.Text;
+                MessageBox.Show("Dados Gravados");
+                string vqueryDGV = @"
+                    SELECT
+                        tbt.N_IDTURMA as 'ID',
+                        tbt.T_DSCTURMA as 'Turma',
+                        tbh.T_DSCHORARIO as 'Horário'
+                    FROM
+                        tb_turmas as tbt
+                    INNER JOIN
+                        tb_horarios as tbh on tbh.N_IDHORARIO = tbt.N_IDHORARIO
+                ";
+                Dgv_turmas.DataSource = Banco.Dql(vqueryDGV);
+                calcVagas();
+
         }
 
         private void Btn_excluirTurma_Click(object sender, EventArgs e)
@@ -152,6 +216,54 @@ namespace AcademiaSystem
         private void Btn_fechar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void Btn_imprimirTurma_Click(object sender, EventArgs e)
+        {
+            string nomeArquivo = Globais.caminho + @"\turmas.pdf";
+            FileStream arquivoPDF = new FileStream(nomeArquivo, FileMode.Create);
+            Document doc = new Document(PageSize.A4);
+            PdfWriter escritorPDF = PdfWriter.GetInstance(doc, arquivoPDF);
+
+            iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(Globais.caminho + @"\logo.png");
+            logo.ScaleToFit(140f, 120f);
+            logo.Alignment = Element.ALIGN_CENTER;
+
+            string dados = "";
+            Paragraph paragrafo1 = new Paragraph(dados, new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 20, (int)System.Drawing.FontStyle.Bold));
+            paragrafo1.Alignment = Element.ALIGN_CENTER;
+            paragrafo1.Add("Relatório de Turmas\n\n");
+
+            Paragraph paragrafo2 = new Paragraph(dados, new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 12, (int)System.Drawing.FontStyle.Bold));
+            paragrafo2.Alignment = Element.ALIGN_CENTER;                 
+            paragrafo2.Add("Academia xyz");
+
+            PdfPTable tabela = new PdfPTable(3); //3 colunas
+            tabela.DefaultCell.FixedHeight = 20;
+
+            tabela.AddCell("ID Turma");
+            tabela.AddCell("Turma");
+            tabela.AddCell("Horário");
+
+            DataTable dtTurmas = Banco.Dql(vqueryDGV);
+            for (int i = 0; i < dtTurmas.Rows.Count; i++)
+            {
+                tabela.AddCell(dtTurmas.Rows[i].Field<Int64>("ID").ToString());
+                tabela.AddCell(dtTurmas.Rows[i].Field<string>("Turma"));
+                tabela.AddCell(dtTurmas.Rows[i].Field<string>("Horário"));
+            }
+            doc.Open();
+            doc.Add(logo);
+            doc.Add(paragrafo1);
+            doc.Add(tabela);
+            doc.Add(paragrafo2);                    
+            doc.Close();
+
+            DialogResult res = MessageBox.Show("Deseja abrir o Relatório?", "Relatório", MessageBoxButtons.YesNo);
+            if (res == DialogResult.Yes)
+            {
+                System.Diagnostics.Process.Start(Globais.caminho + @"\turmas.pdf");
+            }
         }
     }
 }
