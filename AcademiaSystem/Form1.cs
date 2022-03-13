@@ -56,7 +56,8 @@ namespace AcademiaSystem
 
         private void novoAlunoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+            F_NovoAluno f_NovoAluno = new F_NovoAluno();
+            f_NovoAluno.ShowDialog();
 
         }
         private void Restricao()
@@ -101,6 +102,12 @@ namespace AcademiaSystem
         {
             F_GestaoTurmas f_GestaoTurmas = new F_GestaoTurmas();
             f_GestaoTurmas.ShowDialog();
+        }
+
+        private void matricularAlunoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_MatricularAluno f_MatricularAluno = new F_MatricularAluno();
+            f_MatricularAluno.ShowDialog();
         }
     }
 }

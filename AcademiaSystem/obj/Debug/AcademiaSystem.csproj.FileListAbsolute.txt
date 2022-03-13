@@ -48,3 +48,6 @@ D:\REPOSITÓRIO\SistemaDeAcademia\AcademiaSystem\obj\Debug\AcademiaSystem.F_Gest
 D:\REPOSITÓRIO\SistemaDeAcademia\AcademiaSystem\bin\Debug\BouncyCastle.Crypto.dll
 D:\REPOSITÓRIO\SistemaDeAcademia\AcademiaSystem\bin\Debug\itextsharp.dll
 D:\REPOSITÓRIO\SistemaDeAcademia\AcademiaSystem\bin\Debug\itextsharp.xml
+D:\REPOSITÓRIO\SistemaDeAcademia\AcademiaSystem\obj\Debug\AcademiaSystem.F_NovoAluno.resources
+D:\REPOSITÓRIO\SistemaDeAcademia\AcademiaSystem\obj\Debug\AcademiaSystem.F_MatricularAluno.resources
+D:\REPOSITÓRIO\SistemaDeAcademia\AcademiaSystem\obj\Debug\AcademiaSystem.F_SelecionarTurma.resources
