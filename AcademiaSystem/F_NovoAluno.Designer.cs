@@ -43,7 +43,11 @@
             this.Cb_status = new System.Windows.Forms.ComboBox();
             this.Btn_selPlano = new System.Windows.Forms.Button();
             this.Btn_matricular = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Btn_add = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Btn_novo
@@ -64,9 +68,9 @@
             this.panel1.Controls.Add(this.Btn_fechar);
             this.panel1.Controls.Add(this.Btn_novo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 163);
+            this.panel1.Location = new System.Drawing.Point(0, 177);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(466, 29);
+            this.panel1.Size = new System.Drawing.Size(573, 29);
             this.panel1.TabIndex = 15;
             // 
             // Btn_gravar
@@ -96,7 +100,7 @@
             // Btn_fechar
             // 
             this.Btn_fechar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_fechar.Location = new System.Drawing.Point(368, 3);
+            this.Btn_fechar.Location = new System.Drawing.Point(474, 3);
             this.Btn_fechar.Name = "Btn_fechar";
             this.Btn_fechar.Size = new System.Drawing.Size(95, 23);
             this.Btn_fechar.TabIndex = 9;
@@ -185,19 +189,45 @@
             // 
             // Btn_matricular
             // 
-            this.Btn_matricular.Location = new System.Drawing.Point(317, 72);
+            this.Btn_matricular.Location = new System.Drawing.Point(288, 90);
             this.Btn_matricular.Name = "Btn_matricular";
-            this.Btn_matricular.Size = new System.Drawing.Size(133, 48);
+            this.Btn_matricular.Size = new System.Drawing.Size(153, 46);
             this.Btn_matricular.TabIndex = 27;
             this.Btn_matricular.Text = "Matricular Aluno";
             this.Btn_matricular.UseVisualStyleBackColor = true;
             this.Btn_matricular.Click += new System.EventHandler(this.Btn_matricular_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(479, 51);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(85, 113);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
+            // 
+            // Btn_add
+            // 
+            this.Btn_add.Location = new System.Drawing.Point(479, 22);
+            this.Btn_add.Name = "Btn_add";
+            this.Btn_add.Size = new System.Drawing.Size(85, 23);
+            this.Btn_add.TabIndex = 29;
+            this.Btn_add.Text = "Add Foto";
+            this.Btn_add.UseVisualStyleBackColor = true;
+            this.Btn_add.Click += new System.EventHandler(this.Btn_add_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.Filter = "JPG(*jpg)|*.jpg|PNG(*png)|*.png|JPEG(*jpeg)|*.jpeg";
+            // 
             // F_NovoAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(466, 192);
+            this.ClientSize = new System.Drawing.Size(573, 206);
+            this.Controls.Add(this.Btn_add);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Btn_matricular);
             this.Controls.Add(this.Btn_selPlano);
             this.Controls.Add(this.Cb_status);
@@ -216,6 +246,7 @@
             this.Text = "Novo Aluno";
             this.Load += new System.EventHandler(this.F_NovoAluno_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,5 +269,8 @@
         private System.Windows.Forms.ComboBox Cb_status;
         private System.Windows.Forms.Button Btn_selPlano;
         private System.Windows.Forms.Button Btn_matricular;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button Btn_add;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

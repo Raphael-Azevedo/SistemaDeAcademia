@@ -7,11 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace AcademiaSystem
 {
     public partial class F_NovoAluno : Form
     {
+        string origemCompleto = "";
+        string foto = "";
+        string pastaDestino = Globais.caminhoFotos;
+        string destinoCompleto = "";
         public F_NovoAluno()
         {
             InitializeComponent();
@@ -57,15 +62,39 @@ namespace AcademiaSystem
 
         private void Btn_gravar_Click(object sender, EventArgs e)
         {
+            if (destinoCompleto == "")
+            {
+                if(MessageBox.Show("Sem foto selecionada, deseja conitnuar?", "ERRO", MessageBoxButtons.YesNo) == DialogResult.No)
+                {
+                    return;
+                }
+            }
+            if(destinoCompleto != "")
+            {
+                System.IO.File.Copy(origemCompleto, destinoCompleto, true);
+                if (File.Exists(destinoCompleto))
+                {
+                    pictureBox1.ImageLocation = destinoCompleto;
+                }
+                else
+                {
+                    if (MessageBox.Show("Erro ao localizar foto, deseja conitnuar?", "ERRO", MessageBoxButtons.YesNo) == DialogResult.No)
+                    {
+                        return;
+                    }
+                }
+            }
+           
             string queryInsertAluno = String.Format(@"
             INSERT INTO tb_alunos
-                (T_NOMEALUNO, T_TELEFONE, T_STATUS)
+                (T_NOMEALUNO, T_TELEFONE, T_STATUS, T_FOTO)
             VALUES
-                ('{0}', '{1}', '{2}')
-            ", Tb_nome.Text, Mtb_telefone.Text, Cb_status.SelectedValue);
+                ('{0}', '{1}', '{2}', '{3}')
+            ", Tb_nome.Text, Mtb_telefone.Text, Cb_status.SelectedValue, destinoCompleto);
             Banco.Dml(queryInsertAluno);
             MessageBox.Show("Novo Aluno inserido");
             DesabilitarBotao();
+
         }
         private void DesabilitarBotao()
         {
@@ -86,6 +115,28 @@ namespace AcademiaSystem
         {
             F_MatricularAluno f_MatricularAluno = new F_MatricularAluno();
             f_MatricularAluno.ShowDialog();
+        }
+
+        private void Btn_add_Click(object sender, EventArgs e)
+        {
+            origemCompleto = "";
+            foto = "";
+            pastaDestino = Globais.caminhoFotos;
+            destinoCompleto = "";
+            if(openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                origemCompleto = openFileDialog1.FileName;
+                foto = openFileDialog1.SafeFileName;
+                destinoCompleto = pastaDestino + foto;
+            }
+            if(File.Exists(destinoCompleto))
+            {
+                if(MessageBox.Show("Arquivo já existe, deseja substituir?", "Substituir", MessageBoxButtons.YesNo) == DialogResult.No)
+                {
+                    return;
+                }          
+            }          
+            pictureBox1.ImageLocation = origemCompleto;
         }
     }
 }

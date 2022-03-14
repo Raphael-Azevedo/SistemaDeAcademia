@@ -51,3 +51,4 @@ D:\REPOSITÓRIO\SistemaDeAcademia\AcademiaSystem\bin\Debug\itextsharp.xml
 D:\REPOSITÓRIO\SistemaDeAcademia\AcademiaSystem\obj\Debug\AcademiaSystem.F_NovoAluno.resources
 D:\REPOSITÓRIO\SistemaDeAcademia\AcademiaSystem\obj\Debug\AcademiaSystem.F_MatricularAluno.resources
 D:\REPOSITÓRIO\SistemaDeAcademia\AcademiaSystem\obj\Debug\AcademiaSystem.F_SelecionarTurma.resources
+D:\REPOSITÓRIO\SistemaDeAcademia\AcademiaSystem\obj\Debug\AcademiaSystem.F_GestaoAlunos.resources

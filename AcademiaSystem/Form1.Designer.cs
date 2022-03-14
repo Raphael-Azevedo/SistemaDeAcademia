@@ -37,6 +37,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.alunosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novoAlunoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.matricularAlunoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novoUsuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
@@ -49,7 +50,7 @@
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.matricularAlunoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestãoDeAlunosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Pb_ledLogado)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -132,7 +133,8 @@
             // 
             this.alunosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.novoAlunoToolStripMenuItem,
-            this.matricularAlunoToolStripMenuItem});
+            this.matricularAlunoToolStripMenuItem,
+            this.gestãoDeAlunosToolStripMenuItem});
             this.alunosToolStripMenuItem.Name = "alunosToolStripMenuItem";
             this.alunosToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.alunosToolStripMenuItem.Text = "Alunos";
@@ -143,6 +145,13 @@
             this.novoAlunoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.novoAlunoToolStripMenuItem.Text = "Novo Aluno";
             this.novoAlunoToolStripMenuItem.Click += new System.EventHandler(this.novoAlunoToolStripMenuItem_Click);
+            // 
+            // matricularAlunoToolStripMenuItem
+            // 
+            this.matricularAlunoToolStripMenuItem.Name = "matricularAlunoToolStripMenuItem";
+            this.matricularAlunoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.matricularAlunoToolStripMenuItem.Text = "Matricular Aluno";
+            this.matricularAlunoToolStripMenuItem.Click += new System.EventHandler(this.matricularAlunoToolStripMenuItem_Click);
             // 
             // usuáriosToolStripMenuItem
             // 
@@ -237,12 +246,12 @@
             this.logoffToolStripMenuItem.Text = "Logoff";
             this.logoffToolStripMenuItem.Click += new System.EventHandler(this.logoffToolStripMenuItem_Click);
             // 
-            // matricularAlunoToolStripMenuItem
+            // gestãoDeAlunosToolStripMenuItem
             // 
-            this.matricularAlunoToolStripMenuItem.Name = "matricularAlunoToolStripMenuItem";
-            this.matricularAlunoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.matricularAlunoToolStripMenuItem.Text = "Matricular Aluno";
-            this.matricularAlunoToolStripMenuItem.Click += new System.EventHandler(this.matricularAlunoToolStripMenuItem_Click);
+            this.gestãoDeAlunosToolStripMenuItem.Name = "gestãoDeAlunosToolStripMenuItem";
+            this.gestãoDeAlunosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gestãoDeAlunosToolStripMenuItem.Text = "Gestão de Alunos";
+            this.gestãoDeAlunosToolStripMenuItem.Click += new System.EventHandler(this.gestãoDeAlunosToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -289,6 +298,7 @@
         private System.Windows.Forms.ToolStripMenuItem gestãoDeProfessoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem turmasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem matricularAlunoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestãoDeAlunosToolStripMenuItem;
     }
 }
 

@@ -109,5 +109,11 @@ namespace AcademiaSystem
             F_MatricularAluno f_MatricularAluno = new F_MatricularAluno();
             f_MatricularAluno.ShowDialog();
         }
+
+        private void gestãoDeAlunosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_GestaoAlunos f_GestaoAlunos = new F_GestaoAlunos();
+            f_GestaoAlunos.ShowDialog();
+        }
     }
 }
