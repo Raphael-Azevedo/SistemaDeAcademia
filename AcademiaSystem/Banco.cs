@@ -14,7 +14,7 @@ namespace AcademiaSystem
         private static SQLiteConnection conexao;
         private static SQLiteConnection ConexaoBanco()
         {
-            conexao = new SQLiteConnection("Data Source =" + Globais.caminhoBanco + Globais.nomeBanco);
+            conexao = new SQLiteConnection("Data Source =" + Globais.caminhoBanco + Globais.nomeBanco+"; Version = 3;Mode = ReadWrite; new= false;Compress = true;SQLiteJournalModeEnum Mode=off");
             conexao.Open();
             return conexao;
         }

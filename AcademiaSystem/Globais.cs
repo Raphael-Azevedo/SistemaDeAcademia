@@ -14,7 +14,7 @@ namespace AcademiaSystem
         // public static string caminho = System.Environment.CurrentDirectory;
         public static string caminho = System.AppDomain.CurrentDomain.BaseDirectory.ToString();
         public static string nomeBanco = "bd_academia.db";
-        public static string caminhoBanco = caminho+@"\BD\";
+        public static string caminhoBanco = caminho+@"\Repository\";
         public static string caminhoFotos = caminho + @"\foto\";
     }
 }

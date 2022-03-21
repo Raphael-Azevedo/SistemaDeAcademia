@@ -52,3 +52,5 @@ D:\REPOSITÓRIO\SistemaDeAcademia\AcademiaSystem\obj\Debug\AcademiaSystem.F_Novo
 D:\REPOSITÓRIO\SistemaDeAcademia\AcademiaSystem\obj\Debug\AcademiaSystem.F_MatricularAluno.resources
 D:\REPOSITÓRIO\SistemaDeAcademia\AcademiaSystem\obj\Debug\AcademiaSystem.F_SelecionarTurma.resources
 D:\REPOSITÓRIO\SistemaDeAcademia\AcademiaSystem\obj\Debug\AcademiaSystem.F_GestaoAlunos.resources
+D:\REPOSITÓRIO\SistemaDeAcademia\AcademiaSystem\bin\Debug\x64\SQLite.Interop.dll
+D:\REPOSITÓRIO\SistemaDeAcademia\AcademiaSystem\bin\Debug\x86\SQLite.Interop.dll
