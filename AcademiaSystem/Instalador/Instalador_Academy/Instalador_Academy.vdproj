@@ -15,24 +15,6 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_0C732D75190F7E70969EAC794AA5F512"
-        "OwnerKey" = "8:_B2A2B8EEBA5348038EE72FE52EEF8BCC"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_0C732D75190F7E70969EAC794AA5F512"
-        "OwnerKey" = "8:_3476E188B201DCCF862C103BF498F467"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_0C732D75190F7E70969EAC794AA5F512"
-        "OwnerKey" = "8:_611CF773F6603BAC77892DC5A7025175"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_2FFB27D054E114D904D1A2274DC78E00"
         "OwnerKey" = "8:_B2A2B8EEBA5348038EE72FE52EEF8BCC"
         "MsmSig" = "8:_UNDEFINED"
@@ -117,6 +99,24 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_C890E27AA5DB6794ADD73807B6C78FB2"
+        "OwnerKey" = "8:_611CF773F6603BAC77892DC5A7025175"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C890E27AA5DB6794ADD73807B6C78FB2"
+        "OwnerKey" = "8:_B2A2B8EEBA5348038EE72FE52EEF8BCC"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C890E27AA5DB6794ADD73807B6C78FB2"
+        "OwnerKey" = "8:_3476E188B201DCCF862C103BF498F467"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_CF6DBA6B98075E0938875AAA4E6DACC1"
         "OwnerKey" = "8:_B2A2B8EEBA5348038EE72FE52EEF8BCC"
         "MsmSig" = "8:_UNDEFINED"
@@ -154,7 +154,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_0C732D75190F7E70969EAC794AA5F512"
+        "OwnerKey" = "8:_C890E27AA5DB6794ADD73807B6C78FB2"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -282,37 +282,6 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0C732D75190F7E70969EAC794AA5F512"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:System.Data.SQLite, Version=1.0.115.5, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_0C732D75190F7E70969EAC794AA5F512"
-                    {
-                    "Name" = "8:System.Data.SQLite.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.Data.SQLite.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_91C2696A45FB49C098052322935C7B51"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2FFB27D054E114D904D1A2274DC78E00"
             {
             "AssemblyRegister" = "3:1"
@@ -579,6 +548,37 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C890E27AA5DB6794ADD73807B6C78FB2"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:System.Data.SQLite, Version=1.0.115.5, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86"
+                "ScatterAssemblies"
+                {
+                    "_C890E27AA5DB6794ADD73807B6C78FB2"
+                    {
+                    "Name" = "8:System.Data.SQLite.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:System.Data.SQLite.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_91C2696A45FB49C098052322935C7B51"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_CF6DBA6B98075E0938875AAA4E6DACC1"
             {
             "AssemblyRegister" = "3:1"
@@ -690,7 +690,7 @@
                 {
                     "{9EF0B969-E518-4E46-987F-47570745A589}:_3032F0E7DFAD40B2AAC5A06A84CEEED7"
                     {
-                    "Name" = "8:Rsc"
+                    "Name" = "8:foto"
                     "AlwaysCreate" = "11:FALSE"
                     "Condition" = "8:"
                     "Transitive" = "11:FALSE"
