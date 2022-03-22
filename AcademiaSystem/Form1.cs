@@ -115,5 +115,47 @@ namespace AcademiaSystem
             F_GestaoAlunos f_GestaoAlunos = new F_GestaoAlunos();
             f_GestaoAlunos.ShowDialog();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+        
+        private void CollapseMenu()
+        {
+            if (this.Pn_menu.Width == 180)
+            {
+                Pn_menu.Width = 100;
+                Btn_menu.Dock = DockStyle.Top;
+                foreach (Button menuButton in Pn_menu.Controls.OfType<Button>())
+                {
+                    menuButton.Text = "";
+                    menuButton.ImageAlign = ContentAlignment.MiddleCenter;
+                    menuButton.Padding = new Padding(0);
+                }
+
+            }
+            else
+            {
+                Pn_menu.Width = 180;
+                Btn_menu.Dock = DockStyle.None;
+                foreach (Button menuButton in Pn_menu.Controls.OfType<Button>())
+                {
+                    menuButton.Text = menuButton.Tag.ToString();
+                    menuButton.ImageAlign = ContentAlignment.MiddleCenter;
+                    menuButton.Padding = new Padding(10,0,0,0);
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_menu_Click(object sender, EventArgs e)
+        {
+            CollapseMenu();
+        }
     }
 }
