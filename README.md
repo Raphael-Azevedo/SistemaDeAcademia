@@ -1,4 +1,9 @@
 # Sistema de Gestão para Academias feita em WPF com C#
+ ## Sistema
+ 
+ Sistema criado em .NET Framework usando o modelo WPF(Windows forms)
+ Banco de dados utilizado SQLite
+ 
  ## Instalação
  
  1 - clona ou baixe os arquivos deste repositório
